@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "es2015",
+    "stage-3"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-object-rest-spread",
+    "transform-async-to-generator",
+    "transform-async-generator-functions",
+    "transform-class-properties",
+    "dynamic-import-webpack"
+  ]
+}
