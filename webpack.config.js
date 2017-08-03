@@ -27,8 +27,9 @@ const config = {
       // device: path.resolve('./src/lib/device.min'),
     },
     modules: [
-      path.resolve('./src/vue'),
+      path.resolve('./src'),
       path.resolve('./src/js'),
+      path.resolve('./src/vue'),
       path.resolve('./src/css'),
       path.resolve('./src/html'),
       path.resolve('./src/img'),
@@ -59,6 +60,8 @@ const config = {
       errorDetails: true, // add details to errors (like resolving log)
       chunkOrigins: false // add the origins of chunks and chunk merging info
     },
+    host: '0.0.0.0',
+    disableHostCheck: true,
   },
 };
 
@@ -88,7 +91,10 @@ config.module = {
     use: [{
       loader: 'babel',
     }],
-    include: path.resolve('src/js'),
+    include: [
+      path.resolve('src'),
+      path.resolve('src/js'),
+    ],
     exclude: /node_modules/,
   }, {
     test: /\.(jpg|png|gif|svg|ico)$/,
@@ -133,7 +139,7 @@ config.plugins = [
   new HtmlWebpackPlugin({
     minify: false,
     xhtml: true,
-    favicon: 'asset/favicon.ico',
+    // favicon: 'asset/favicon.ico',
     template: './html/index.pug',
     data: {
       DEV_MODE,
