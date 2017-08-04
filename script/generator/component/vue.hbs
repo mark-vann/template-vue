@@ -1,0 +1,43 @@
+<template lang="{{ template }}">
+  {{#if isPug }}
+  .{{ dashCase name }}
+  {{else}}
+  <div class="{{ dashCase name }}"></div>
+  {{/if}}
+</template>
+
+<script>
+  import Vuex from 'vuex';
+
+  export default {
+    $name: '{{ name }}.vue',
+    props: [],
+    data: () => ({
+    }),
+    computed: {
+      ...Vuex.mapState([]),
+      ...Vuex.mapGetters([]),
+    },
+    methods: {
+      ...Vuex.mapMutations([]),
+      ...Vuex.mapActions([]),
+    },
+    mounted() {
+    },
+    beforeDestroy() {
+    },
+    components: {
+    },
+  };
+</script>
+
+<style lang="{{ style }}">
+  {{#if isStylus }}
+  .{{ dashCase name }}
+    // display: none
+  {{else}}
+  .{{ dashCase name }} {
+    // display: none;
+  }
+  {{/if}}
+</style>

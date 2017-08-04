@@ -1,5 +1,5 @@
 <template lang="pug">
-  main
+  transition(name="fade")
     .container-fluid
       - for (var i = 0; i < 12; i++)
         .col-md-1
